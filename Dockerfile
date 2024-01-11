@@ -1,9 +1,8 @@
 FROM ruby:3.2.2
 
-RUN apt-get update -qq && \ 
-  apt-get install -y \
-  nodejs \
-  yarn
+RUN curl -sL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get install -y nodejs \
+    && npm install -g yarn
 
 WORKDIR /app
 
